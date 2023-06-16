@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -38,12 +38,9 @@ dependencies:
   hexo-server:
     specifier: ^3.0.0
     version: 3.0.0
-  hexo-theme-landscape:
-    specifier: ^1.0.0
-    version: 1.0.0
-  hexo-theme-next:
-    specifier: ^8.17.0
-    version: 8.17.0
+  hexo-word-counter:
+    specifier: ^0.1.0
+    version: 0.1.0
 
 packages:
 
@@ -164,6 +161,11 @@ packages:
     dependencies:
       pascal-case: 3.1.2
       tslib: 2.5.3
+    dev: false
+
+  /cargo-cp-artifact@0.1.8:
+    resolution: {integrity: sha512-3j4DaoTrsCD1MRkTF2Soacii0Nx7UHCce0EwUf4fHnggwiE4fbmF2AbnfzayR36DF8KGadfh7M/Yfy625kgPlA==}
+    hasBin: true
     dev: false
 
   /chalk@4.1.2:
@@ -636,14 +638,6 @@ packages:
       - supports-color
     dev: false
 
-  /hexo-theme-landscape@1.0.0:
-    resolution: {integrity: sha512-bWQJWMqQI78wWiJPQZq5pJBH20TM442ShCaHGRetuEgMraxH0OKxB3NTupJzNEkzEk8DV2yrdizkXdKN6i501A==}
-    dev: false
-
-  /hexo-theme-next@8.17.0:
-    resolution: {integrity: sha512-J51XPF6wlxxgJ6MW7MXi7LweIhR7i/57CwFk7GHIncju4GHYcD78D678p2UAc9MQc8MFQuyz2pgGopnUEXZ9BQ==}
-    dev: false
-
   /hexo-util@2.7.0:
     resolution: {integrity: sha512-hQM3h34nhDg0bSe/Tg1lnpODvNkz7h2u0+lZGzlKL0Oufp+5KCAEUX9wal7/xC7ax3/cwEn8IuoU75kNpZLpJQ==}
     engines: {node: '>=12.4.0'}
@@ -656,6 +650,14 @@ packages:
       htmlparser2: 7.2.0
       prismjs: 1.29.0
       strip-indent: 3.0.0
+    dev: false
+
+  /hexo-word-counter@0.1.0:
+    resolution: {integrity: sha512-6HXSL2dlPuekSqWV7DevrUjGF0JgiHKGqkKSfay00JF9GmshJCLDK+AjvVrN0J1WgCbavsUGSwukyZgfW8VdSw==}
+    requiresBuild: true
+    dependencies:
+      cargo-cp-artifact: 0.1.8
+      hexo-util: 2.7.0
     dev: false
 
   /hexo@6.3.0:
