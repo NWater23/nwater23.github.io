@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>QEMU 命令合集</title>
+    <url>/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/</url>
+    <content><![CDATA[<p>俗话说，前人栽树，后人乘凉。希望能解决你的问题。</p>
+<script src="https://gist.github.com/NWater23/e86dc92c4cd206f57bc754572e3f8adf.js"></script>
+<span id="more"></span>
+<p>另请参阅：</p>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/QEMU">QEMU - ArchWiki</a></li>
+<li><a href="https://assil.me/2020/07/08/pulseaudio-arch-libvirt.html">Fixing pulseaudio issues with QEMU/libvirt on Arch</a></li>
+<li><a href="https://stackoverflow.com/questions/64560389/setting-up-pulseaudio-in-qemu">Setting up PulseAudio in QEMU</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>笔记 - QEMU</category>
+      </categories>
+      <tags>
+        <tag>虚拟化 - 软件 - QEMU</tag>
+        <tag>Linux - 作为环境</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/uncategorized/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -58,8 +79,8 @@
         <category>教程 - Linux - 实用工具</category>
       </categories>
       <tags>
-        <tag>归档和压缩 - zip - unzip 解压</tag>
         <tag>Linux - 作为环境</tag>
+        <tag>归档和压缩 - zip - unzip 解压</tag>
         <tag>Windows - 作为来源</tag>
         <tag>编码字符集 - 东亚 - 中文 - cp936</tag>
         <tag>编码字符集 - 东亚 - 中文 - GB2312</tag>
