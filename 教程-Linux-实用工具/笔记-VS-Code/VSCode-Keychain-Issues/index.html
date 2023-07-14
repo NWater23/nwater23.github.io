@@ -19,25 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"nwater23.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Hello world!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rainbow">
-<meta property="og:url" content="https://nwater23.github.io/index.html">
+    <meta name="description" content="发现问题 更新完VSCode，突然提示出错。询问请打开疑难解答指南以解决此问题，也可以使用不用 OS keyring 的较弱加密。    有关此提示的i18n信息   https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;vscode-loc&#x2F;blob&#x2F;616502b1f429c9ac0dc81004d8be2db96869f01e&#x2F;i18n&#x2F;vscode-language-pack-zh-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VSCode Keychain Issues">
+<meta property="og:url" content="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/index.html">
 <meta property="og:site_name" content="Rainbow">
-<meta property="og:description" content="Hello world!">
+<meta property="og:description" content="发现问题 更新完VSCode，突然提示出错。询问请打开疑难解答指南以解决此问题，也可以使用不用 OS keyring 的较弱加密。    有关此提示的i18n信息   https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;vscode-loc&#x2F;blob&#x2F;616502b1f429c9ac0dc81004d8be2db96869f01e&#x2F;i18n&#x2F;vscode-language-pack-zh-">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-14T05:08:46.000Z">
+<meta property="article:modified_time" content="2023-07-14T05:08:46.000Z">
 <meta property="article:author" content="Nian Water">
+<meta property="article:tag" content="Linux - 作为环境">
+<meta property="article:tag" content="开发环境 - IDE - VS Code">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://nwater23.github.io/">
+<link rel="canonical" href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/","path":"教程-Linux-实用工具/笔记-VS-Code/VSCode-Keychain-Issues/","title":"VSCode Keychain Issues"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Rainbow - 你好世界</title>
+<title>VSCode Keychain Issues | Rainbow</title>
   
 
 
@@ -71,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Rainbow</h1>
+      <p class="site-title">Rainbow</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">你好世界</p>
@@ -125,7 +129,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -138,6 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text"> 发现问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 解决问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#troubleshooting-keychain-issues"><span class="nav-number">3.</span> <span class="nav-text"> Troubleshooting keychain issues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows-macos"><span class="nav-number">3.1.</span> <span class="nav-text"> Windows &amp; macOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux"><span class="nav-number">3.2.</span> <span class="nav-text"> Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gnome-or-unity-or-similar"><span class="nav-number">3.2.1.</span> <span class="nav-text"> GNOME or UNITY (or similar)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kde"><span class="nav-number">3.2.2.</span> <span class="nav-text"> KDE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#other-linux-desktop-environments"><span class="nav-number">3.2.3.</span> <span class="nav-text"> Other Linux desktop environments</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#recommended-configure-the-keyring-to-use-with-vs-code"><span class="nav-number">3.2.4.</span> <span class="nav-text"> (recommended) Configure the keyring to use with VS Code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#not-recommended-configure-basic-text-encryption"><span class="nav-number">3.2.5.</span> <span class="nav-text"> (not recommended) Configure basic text encryption</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,16 +199,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,13 +223,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rainbow">
+      <meta itemprop="name" content="VSCode Keychain Issues | Rainbow">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/" class="post-title-link" itemprop="url">VSCode Keychain Issues</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          VSCode Keychain Issues<a href="https://github.com/nwater23/nwater23.github.io/tree/main/source/_posts/VSCode-Keychain-Issues.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -273,8 +279,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="发现问题"><a class="markdownIt-Anchor" href="#发现问题"></a> 发现问题</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="发现问题"><a class="markdownIt-Anchor" href="#发现问题"></a> 发现问题</h2>
 <p>更新完VSCode，突然提示出错。询问<code>请打开疑难解答指南以解决此问题，也可以使用不用 OS keyring 的较弱加密。</code></p>
 <details>
   <summary>有关此提示的i18n信息</summary>
@@ -288,15 +293,50 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[23476:0714/131505.501724:VERBOSE1:key_storage_util_linux.cc(54)] Password storage detected desktop environment: (unknown)</span><br></pre></td></tr></table></figure>
 <p>那问题很好解决了，直接照着官方文档改一下<code>argv.json</code>就行了。</p>
 <figure class="highlight json"><figcaption><span>~/.vscode/argv.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;password-store&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gnome&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<span id="more"></span>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>(2023) <a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues">Settings SYnc in Visual Studio Code§Troubleshooting keychain issues</a></p>
+<h2 id="troubleshooting-keychain-issues"><a class="markdownIt-Anchor" href="#troubleshooting-keychain-issues"></a> Troubleshooting keychain issues</h2>
+<blockquote>
+<p>NOTE: This section applies to VS Code version <strong>1.80 and higher</strong>. In 1.80, we moved away from <a target="_blank" rel="noopener" href="https://github.com/atom/node-keytar">keytar</a>, due to its archival, in favor of Electron’s <a target="_blank" rel="noopener" href="https://www.electronjs.org/docs/latest/api/safe-storage">safeStorage API</a>.</p>
+</blockquote>
+<blockquote>
+<p>NOTE: keychain, keyring, wallet, credential store are synonymous in this document.</p>
+</blockquote>
+<p>Settings Sync persists authentication information on desktop using the OS keychain for encryption. Using the keychain can fail in some cases if the keychain is misconfigured or the environment isn’t recognized.</p>
+<p>To help diagnose the problem, you can restart VS Code with the following flags to generate a verbose log:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code --verbose --vmodule=&quot;*/components/os_crypt/*=1&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="windows-macos"><a class="markdownIt-Anchor" href="#windows-macos"></a> Windows &amp; macOS</h3>
+<p>At this time, there are no known configuration issues on Windows or macOS but, if you suspect something is wrong, you can open an <a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/new/choose">issue on VS Code</a> with the verbose logs from above. This is important for us to support additional desktop configurations.</p>
+<h3 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h3>
+<p>Towards the top of the logs from the previous command, you will see something to the effect of:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[9699:0626/093542.027629:VERBOSE1:key_storage_util_linux.cc(54)] Password storage detected desktop environment: GNOME</span><br><span class="line">[9699:0626/093542.027660:VERBOSE1:key_storage_linux.cc(122)] Selected backend for OSCrypt: GNOME_ANY</span><br></pre></td></tr></table></figure>
+<p>We rely on Chromium’s oscrypt module to discover and store encryption key information in the keyring. Chromium supports <a target="_blank" rel="noopener" href="https://source.chromium.org/chromium/chromium/src/+/main:base/nix/xdg_util.cc;l=146-169">a number of different desktop environments</a>. Outlined below are some popular desktop environments and troubleshooting steps that may help if the keyring is misconfigured.</p>
+<h4 id="gnome-or-unity-or-similar"><a class="markdownIt-Anchor" href="#gnome-or-unity-or-similar"></a> GNOME or UNITY (or similar)</h4>
+<p>If the error you’re seeing is “Cannot create an item in a locked collection”, chances are your keyring’s <code>Login</code> keyring is locked. You should launch your OS’s keyring (<a target="_blank" rel="noopener" href="https://wiki.gnome.org/Apps/Seahorse">Seahorse</a> is the commonly used GUI for seeing keyrings) and ensure the default keyring (usually referred to as <code>Login</code> keyring) is unlocked. This keyring needs to be unlocked when you log into your system.</p>
+<h4 id="kde"><a class="markdownIt-Anchor" href="#kde"></a> KDE</h4>
+<blockquote>
+<p>KDE 6 is not yet fully supported by Visual Studio Code. As a workaround: The latest kwallet6 is also accessible as kwallet5, so you can force it to use kwallet5 by setting the password store to <code>kwallet5</code> as explained below in <a href="#other-linux-desktop-environments">Configure the keyring to use with VS Code</a>.</p>
+</blockquote>
+<p>It’s possible that your wallet (aka keyring) is closed. If you open <a target="_blank" rel="noopener" href="https://apps.kde.org/kwalletmanager5">KWalletManager</a>, you can see if the default <code>kdewallet</code> is closed and if it is, make sure you open it.</p>
+<h4 id="other-linux-desktop-environments"><a class="markdownIt-Anchor" href="#other-linux-desktop-environments"></a> Other Linux desktop environments</h4>
+<p>First off, if your desktop environment wasn’t detected, you can <a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/new/choose">open an issue on VS Code</a> with the verbose logs from above. This is important for us to support additional desktop configurations.</p>
+<h4 id="recommended-configure-the-keyring-to-use-with-vs-code"><a class="markdownIt-Anchor" href="#recommended-configure-the-keyring-to-use-with-vs-code"></a> (recommended) Configure the keyring to use with VS Code</h4>
+<p>You can manually tell VS Code which keyring to use by passing the <code>password-store</code> flag. Our recommended configuration is to first install <a target="_blank" rel="noopener" href="https://wiki.gnome.org/Projects/GnomeKeyring">gnome-keyring</a> if you don’t have it already and then launch VS Code with <code>code --password-store=&quot;gnome&quot;</code>.</p>
+<p>If this solution works for you, you can persist the value of <code>password-store</code> by opening the Command Palette (<code>kb(workbench.action.showCommands)</code>) and running the <strong>Preferences: Configure Runtime Arguments</strong> command. This will open the <code>argv.json</code> file where you can add the setting <code>&quot;password-store&quot;:&quot;gnome&quot;</code>.</p>
+<blockquote>
+<p>NOTE: If you would rather not use <code>gnome-keyring</code>, you can try using a package that implements the <a target="_blank" rel="noopener" href="https://www.gnu.org/software/emacs/manual/html_node/auth/Secret-Service-API.html">Secret Service API</a>. If you do this, the <code>password-store</code> flag can still be set to <code>gnome</code> and Electron will detect other implementations of the Secret Service API. Additionally, you could try installing <code>kwallet5</code> on your system. If you do, you will want to set the <code>password-store</code> flag to <code>kwallet5</code> to detect the installed <code>kwallet5</code>. All possible values for <code>password-store</code> can be <a target="_blank" rel="noopener" href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/108.0.5359.215:components/os_crypt/key_storage_util_linux.cc;l=35-46">found in Chromium’s source</a>.</p>
+</blockquote>
+<p>Don’t hesitate to <a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/new/choose">open an issue on VS Code</a> with the verbose logs if you run into any issues.</p>
+<h4 id="not-recommended-configure-basic-text-encryption"><a class="markdownIt-Anchor" href="#not-recommended-configure-basic-text-encryption"></a> (not recommended) Configure basic text encryption</h4>
+<p>We rely on Chromium’s oscrypt module to discover and store encryption key information in the keyring. Chromium offers an opt-in fallback encryption strategy that uses an in-memory key based on a string that is hardcoded in the Chromium source. Because of this, this fallback strategy is, at best, obfuscation, and should only be used if you are accepting of the risk that any process on the system could, in theory, decrypt your stored secrets.</p>
+<p>If you accept this risk, you can set <code>password-store</code> to <code>basic</code> by opening the Command Palette (<code>kb(workbench.action.showCommands)</code>) and running the <strong>Preferences: Configure Runtime Arguments</strong> command. This will open the <code>argv.json</code> file where you can add the setting <code>&quot;password-store&quot;:&quot;basic&quot;</code>. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
     </div>
 
     
@@ -304,419 +344,56 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nian Water">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rainbow">
-      <meta itemprop="description" content="Hello world!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rainbow">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/" class="post-title-link" itemprop="url">在TTY或SSH上使用GPG，即没有GUI界面时</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-07-14 11:56:13" itemprop="dateCreated datePublished" datetime="2023-07-14T11:56:13+08:00">2023-07-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">教程 - Linux - 实用工具</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>222</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>当通过ssh远程连接到服务器，或者在纯字符界面的tty上操作时，总之就是在无GUI情况下操作时。<br />
-使用gpg签名（或者通过<code>git commit -S</code>等调用gpg），会报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gpg: signing failed: Inappropriate ioctl for device</span><br><span class="line">gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</span><br></pre></td></tr></table></figure>
-<p>原因是无法调用默认的<code>/usr/bin/pinentry-gtk-2</code>，如果你没安装GTK的话也会出现这个报错。</p>
-<p>根据Arch Wiki介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，修改<code>.bashrc</code>即可（zsh同理）：</p>
-<figure class="highlight bash"><figcaption><span>.bashrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GPG_TTY=$(<span class="built_in">tty</span>)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://nwater23.github.io/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nian Water">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rainbow">
-      <meta itemprop="description" content="Hello world!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rainbow">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/" class="post-title-link" itemprop="url">QEMU 命令合集</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-07-06 15:08:09" itemprop="dateCreated datePublished" datetime="2023-07-06T15:08:09+08:00">2023-07-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AC%94%E8%AE%B0-QEMU/" itemprop="url" rel="index"><span itemprop="name">笔记 - QEMU</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>47</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>俗话说，前人栽树，后人乘凉。希望能解决你的问题。</p>
-<script src="https://gist.github.com/NWater23/e86dc92c4cd206f57bc754572e3f8adf.js"></script>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/zip-cp936/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nian Water">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rainbow">
-      <meta itemprop="description" content="Hello world!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rainbow">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/zip-cp936/" class="post-title-link" itemprop="url">zip 解压乱码：代码页 cp936</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-06-09 18:45:20" itemprop="dateCreated datePublished" datetime="2023-06-09T18:45:20+08:00">2023-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">教程 - Linux - 实用工具</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>207</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Windows 使用的简体中文编码与 UTF-8 不兼容会导致乱码。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<p>使用 <code>-O cp936</code> 选项<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip -O cp936 &lt;zip file&gt;</span><br></pre></td></tr></table></figure>
-<p>也可以给 <code>-O</code> 选项使用参数：</p>
+<div class="post-copyright">
 <ul>
-<li><code>GBK</code></li>
-<li><code>GB2312</code></li>
-<li><code>GB18030</code></li>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Nian Water
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/" title="VSCode Keychain Issues">https://nwater23.github.io/教程-Linux-实用工具/笔记-VS-Code/VSCode-Keychain-Issues/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/zip-cp936/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Linux-%E4%BD%9C%E4%B8%BA%E7%8E%AF%E5%A2%83/" rel="tag"># Linux - 作为环境</a>
+              <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-IDE-VS-Code/" rel="tag"># 开发环境 - IDE - VS Code</a>
+          </div>
+
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://nwater23.github.io/uncategorized/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nian Water">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rainbow">
-      <meta itemprop="description" content="Hello world!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rainbow">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/uncategorized/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-06-09 00:00:00" itemprop="dateCreated datePublished" datetime="2023-06-09T00:00:00+08:00">2023-06-09</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>78</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/" rel="prev" title="在TTY或SSH上使用GPG，即没有GUI界面时">
+                  <i class="fa fa-chevron-left"></i> 在TTY或SSH上使用GPG，即没有GUI界面时
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -725,6 +402,8 @@
 
 
 
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 

@@ -53,6 +53,76 @@
       </tags>
   </entry>
   <entry>
+    <title>VSCode Keychain Issues</title>
+    <url>/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/</url>
+    <content><![CDATA[<h2 id="发现问题"><a class="markdownIt-Anchor" href="#发现问题"></a> 发现问题</h2>
+<p>更新完VSCode，突然提示出错。询问<code>请打开疑难解答指南以解决此问题，也可以使用不用 OS keyring 的较弱加密。</code></p>
+<details>
+  <summary>有关此提示的i18n信息</summary>
+  <figure class="highlight json"><figcaption><span>https://github.com/microsoft/vscode-loc/blob/616502b1f429c9ac0dc81004d8be2db96869f01e/i18n/vscode-language-pack-zh-hans/translations/main.i18n.json#L12221</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vs/workbench/services/secrets/electron-sandbox/secretStorageService&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;encryptionNotAvailableJustTroubleshootingGuide&quot;</span><span class="punctuation">:</span> <span class="string">&quot;无法识别用于在当前桌面环境中存储加密相关数据的 OS keyring。&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;isGnome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你正在 GNOME 环境中运行，但 OS keyring 不可用用于加密。请确保已安装并运行 gnome-keyring 或其他 libsecret 兼容实现。&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;isKwallet&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你正在 KDE 环境中运行，但 OS keyring 不可用于加密。请确保 kwallet 正在运行。&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;troubleshootingButton&quot;</span><span class="punctuation">:</span> <span class="string">&quot;打开疑难解答指南&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;usePlainText&quot;</span><span class="punctuation">:</span> <span class="string">&quot;使用较弱的加密&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;usePlainTextExtraSentence&quot;</span><span class="punctuation">:</span> <span class="string">&quot;请打开疑难解答指南以解决此问题，也可以使用不用 OS keyring 的较弱加密。&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+</details>
+<hr />
+<h2 id="解决问题"><a class="markdownIt-Anchor" href="#解决问题"></a> 解决问题</h2>
+<p>根据官方文档<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>的教程，试试看日志有什么报错：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">code --verbose --vmodule=<span class="string">&quot;*/components/os_crypt/*=1&quot;</span> | less</span><br></pre></td></tr></table></figure>
+<p>第二行看到了问题所在：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[23476:0714/131505.501724:VERBOSE1:key_storage_util_linux.cc(54)] Password storage detected desktop environment: (unknown)</span><br></pre></td></tr></table></figure>
+<p>那问题很好解决了，直接照着官方文档改一下<code>argv.json</code>就行了。</p>
+<figure class="highlight json"><figcaption><span>~/.vscode/argv.json</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;password-store&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gnome&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>(2023) <a href="https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues">Settings SYnc in Visual Studio Code§Troubleshooting keychain issues</a></p>
+<h2 id="troubleshooting-keychain-issues"><a class="markdownIt-Anchor" href="#troubleshooting-keychain-issues"></a> Troubleshooting keychain issues</h2>
+<blockquote>
+<p>NOTE: This section applies to VS Code version <strong>1.80 and higher</strong>. In 1.80, we moved away from <a href="https://github.com/atom/node-keytar">keytar</a>, due to its archival, in favor of Electron’s <a href="https://www.electronjs.org/docs/latest/api/safe-storage">safeStorage API</a>.</p>
+</blockquote>
+<blockquote>
+<p>NOTE: keychain, keyring, wallet, credential store are synonymous in this document.</p>
+</blockquote>
+<p>Settings Sync persists authentication information on desktop using the OS keychain for encryption. Using the keychain can fail in some cases if the keychain is misconfigured or the environment isn’t recognized.</p>
+<p>To help diagnose the problem, you can restart VS Code with the following flags to generate a verbose log:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">code --verbose --vmodule=&quot;*/components/os_crypt/*=1&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="windows-macos"><a class="markdownIt-Anchor" href="#windows-macos"></a> Windows &amp; macOS</h3>
+<p>At this time, there are no known configuration issues on Windows or macOS but, if you suspect something is wrong, you can open an <a href="https://github.com/microsoft/vscode/issues/new/choose">issue on VS Code</a> with the verbose logs from above. This is important for us to support additional desktop configurations.</p>
+<h3 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h3>
+<p>Towards the top of the logs from the previous command, you will see something to the effect of:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[9699:0626/093542.027629:VERBOSE1:key_storage_util_linux.cc(54)] Password storage detected desktop environment: GNOME</span><br><span class="line">[9699:0626/093542.027660:VERBOSE1:key_storage_linux.cc(122)] Selected backend for OSCrypt: GNOME_ANY</span><br></pre></td></tr></table></figure>
+<p>We rely on Chromium’s oscrypt module to discover and store encryption key information in the keyring. Chromium supports <a href="https://source.chromium.org/chromium/chromium/src/+/main:base/nix/xdg_util.cc;l=146-169">a number of different desktop environments</a>. Outlined below are some popular desktop environments and troubleshooting steps that may help if the keyring is misconfigured.</p>
+<h4 id="gnome-or-unity-or-similar"><a class="markdownIt-Anchor" href="#gnome-or-unity-or-similar"></a> GNOME or UNITY (or similar)</h4>
+<p>If the error you’re seeing is “Cannot create an item in a locked collection”, chances are your keyring’s <code>Login</code> keyring is locked. You should launch your OS’s keyring (<a href="https://wiki.gnome.org/Apps/Seahorse">Seahorse</a> is the commonly used GUI for seeing keyrings) and ensure the default keyring (usually referred to as <code>Login</code> keyring) is unlocked. This keyring needs to be unlocked when you log into your system.</p>
+<h4 id="kde"><a class="markdownIt-Anchor" href="#kde"></a> KDE</h4>
+<blockquote>
+<p>KDE 6 is not yet fully supported by Visual Studio Code. As a workaround: The latest kwallet6 is also accessible as kwallet5, so you can force it to use kwallet5 by setting the password store to <code>kwallet5</code> as explained below in <a href="#other-linux-desktop-environments">Configure the keyring to use with VS Code</a>.</p>
+</blockquote>
+<p>It’s possible that your wallet (aka keyring) is closed. If you open <a href="https://apps.kde.org/kwalletmanager5">KWalletManager</a>, you can see if the default <code>kdewallet</code> is closed and if it is, make sure you open it.</p>
+<h4 id="other-linux-desktop-environments"><a class="markdownIt-Anchor" href="#other-linux-desktop-environments"></a> Other Linux desktop environments</h4>
+<p>First off, if your desktop environment wasn’t detected, you can <a href="https://github.com/microsoft/vscode/issues/new/choose">open an issue on VS Code</a> with the verbose logs from above. This is important for us to support additional desktop configurations.</p>
+<h4 id="recommended-configure-the-keyring-to-use-with-vs-code"><a class="markdownIt-Anchor" href="#recommended-configure-the-keyring-to-use-with-vs-code"></a> (recommended) Configure the keyring to use with VS Code</h4>
+<p>You can manually tell VS Code which keyring to use by passing the <code>password-store</code> flag. Our recommended configuration is to first install <a href="https://wiki.gnome.org/Projects/GnomeKeyring">gnome-keyring</a> if you don’t have it already and then launch VS Code with <code>code --password-store=&quot;gnome&quot;</code>.</p>
+<p>If this solution works for you, you can persist the value of <code>password-store</code> by opening the Command Palette (<code>kb(workbench.action.showCommands)</code>) and running the <strong>Preferences: Configure Runtime Arguments</strong> command. This will open the <code>argv.json</code> file where you can add the setting <code>&quot;password-store&quot;:&quot;gnome&quot;</code>.</p>
+<blockquote>
+<p>NOTE: If you would rather not use <code>gnome-keyring</code>, you can try using a package that implements the <a href="https://www.gnu.org/software/emacs/manual/html_node/auth/Secret-Service-API.html">Secret Service API</a>. If you do this, the <code>password-store</code> flag can still be set to <code>gnome</code> and Electron will detect other implementations of the Secret Service API. Additionally, you could try installing <code>kwallet5</code> on your system. If you do, you will want to set the <code>password-store</code> flag to <code>kwallet5</code> to detect the installed <code>kwallet5</code>. All possible values for <code>password-store</code> can be <a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/108.0.5359.215:components/os_crypt/key_storage_util_linux.cc;l=35-46">found in Chromium’s source</a>.</p>
+</blockquote>
+<p>Don’t hesitate to <a href="https://github.com/microsoft/vscode/issues/new/choose">open an issue on VS Code</a> with the verbose logs if you run into any issues.</p>
+<h4 id="not-recommended-configure-basic-text-encryption"><a class="markdownIt-Anchor" href="#not-recommended-configure-basic-text-encryption"></a> (not recommended) Configure basic text encryption</h4>
+<p>We rely on Chromium’s oscrypt module to discover and store encryption key information in the keyring. Chromium offers an opt-in fallback encryption strategy that uses an in-memory key based on a string that is hardcoded in the Chromium source. Because of this, this fallback strategy is, at best, obfuscation, and should only be used if you are accepting of the risk that any process on the system could, in theory, decrypt your stored secrets.</p>
+<p>If you accept this risk, you can set <code>password-store</code> to <code>basic</code> by opening the Command Palette (<code>kb(workbench.action.showCommands)</code>) and running the <strong>Preferences: Configure Runtime Arguments</strong> command. This will open the <code>argv.json</code> file where you can add the setting <code>&quot;password-store&quot;:&quot;basic&quot;</code>. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>教程 - Linux - 实用工具</category>
+        <category>笔记 - VS Code</category>
+      </categories>
+      <tags>
+        <tag>Linux - 作为环境</tag>
+        <tag>开发环境 - IDE - VS Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/uncategorized/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
