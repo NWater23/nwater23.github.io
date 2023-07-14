@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>在TTY或SSH上使用GPG，即没有GUI界面时</title>
+    <url>/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/</url>
+    <content><![CDATA[<p>当通过ssh远程连接到服务器，或者在纯字符界面的tty上操作时，总之就是在无GUI情况下操作时。<br />
+使用gpg签名（或者通过<code>git commit -S</code>等调用gpg），会报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gpg: signing failed: Inappropriate ioctl for device</span><br><span class="line">gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</span><br></pre></td></tr></table></figure>
+<p>原因是无法调用默认的<code>/usr/bin/pinentry-gtk-2</code>，如果你没安装GTK的话也会出现这个报错。</p>
+<p>根据Arch Wiki介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，修改<code>.bashrc</code>即可（zsh同理）：</p>
+<figure class="highlight bash"><figcaption><span>.bashrc</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> GPG_TTY=$(<span class="built_in">tty</span>)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>(2023) <a href="https://wiki.archlinux.org/title/GnuPG#Invalid_IPC_response_and_Inappropriate_ioctl_for_device">ArchWiki: GnuPG§9.12 Invalid IPC response and Inappropriate ioctl for device</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=== Invalid IPC response and Inappropriate ioctl for device ===</span><br><span class="line"></span><br><span class="line">The default pinentry program is &#123;&#123;ic|/usr/bin/pinentry-gtk-2&#125;&#125;. If &#123;&#123;Pkg|gtk2&#125;&#125; is unavailable, pinentry falls back to &#123;&#123;ic|/usr/bin/pinentry-curses&#125;&#125; and causes signing to fail:</span><br><span class="line"></span><br><span class="line">    gpg: signing failed: Inappropriate ioctl for device</span><br><span class="line">    gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</span><br><span class="line"></span><br><span class="line">You need to set the &#123;&#123;ic|GPG_TTY&#125;&#125; environment variable for the pinentry programs &#123;&#123;ic|/usr/bin/pinentry-tty&#125;&#125; and &#123;&#123;ic|/usr/bin/pinentry-curses&#125;&#125;.</span><br><span class="line"></span><br><span class="line">    $ export GPG_TTY=$(tty)</span><br></pre></td></tr></table></figure> <a href="#fnref1" class="footnote-backref">↩︎</a></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>教程 - Linux - 实用工具</category>
+      </categories>
+      <tags>
+        <tag>Linux - 作为环境</tag>
+        <tag>操作界面 - TTY</tag>
+        <tag>操作界面 - SSH</tag>
+        <tag>操作界面 - CLI</tag>
+        <tag>操作界面 - non-GUI</tag>
+        <tag>操作界面 - TUI</tag>
+        <tag>归档和压缩 - GnuPG</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>QEMU 命令合集</title>
     <url>/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/</url>
     <content><![CDATA[<p>俗话说，前人栽树，后人乘凉。希望能解决你的问题。</p>
@@ -17,8 +48,8 @@
         <category>笔记 - QEMU</category>
       </categories>
       <tags>
-        <tag>虚拟化 - 软件 - QEMU</tag>
         <tag>Linux - 作为环境</tag>
+        <tag>虚拟化 - 软件 - QEMU</tag>
       </tags>
   </entry>
   <entry>

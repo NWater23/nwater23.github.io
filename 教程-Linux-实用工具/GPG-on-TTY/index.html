@@ -19,25 +19,34 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"nwater23.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Hello world!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rainbow">
-<meta property="og:url" content="https://nwater23.github.io/tags/%E8%99%9A%E6%8B%9F%E5%8C%96-%E8%BD%AF%E4%BB%B6-QEMU/index.html">
+    <meta name="description" content="当通过ssh远程连接到服务器，或者在纯字符界面的tty上操作时，总之就是在无GUI情况下操作时。 使用gpg签名（或者通过git commit -S等调用gpg），会报错： 12gpg: signing failed: Inappropriate ioctl for devicegpg: [stdin]: clear-sign failed: Inappropriate ioctl for dev">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在TTY或SSH上使用GPG，即没有GUI界面时">
+<meta property="og:url" content="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/index.html">
 <meta property="og:site_name" content="Rainbow">
-<meta property="og:description" content="Hello world!">
+<meta property="og:description" content="当通过ssh远程连接到服务器，或者在纯字符界面的tty上操作时，总之就是在无GUI情况下操作时。 使用gpg签名（或者通过git commit -S等调用gpg），会报错： 12gpg: signing failed: Inappropriate ioctl for devicegpg: [stdin]: clear-sign failed: Inappropriate ioctl for dev">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-14T03:56:13.000Z">
+<meta property="article:modified_time" content="2023-07-14T03:56:13.000Z">
 <meta property="article:author" content="Nian Water">
+<meta property="article:tag" content="Linux - 作为环境">
+<meta property="article:tag" content="操作界面 - TTY">
+<meta property="article:tag" content="操作界面 - SSH">
+<meta property="article:tag" content="操作界面 - CLI">
+<meta property="article:tag" content="操作界面 - non-GUI">
+<meta property="article:tag" content="操作界面 - TUI">
+<meta property="article:tag" content="归档和压缩 - GnuPG">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://nwater23.github.io/tags/%E8%99%9A%E6%8B%9F%E5%8C%96-%E8%BD%AF%E4%BB%B6-QEMU/">
+<link rel="canonical" href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/虚拟化-软件-QEMU/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/","path":"教程-Linux-实用工具/GPG-on-TTY/","title":"在TTY或SSH上使用GPG，即没有GUI界面时"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 虚拟化 - 软件 - QEMU | Rainbow</title>
+<title>在TTY或SSH上使用GPG，即没有GUI界面时 | Rainbow</title>
   
 
 
@@ -194,51 +203,169 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">虚拟化 - 软件 - QEMU
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Nian Water">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rainbow">
+      <meta itemprop="description" content="Hello world!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="在TTY或SSH上使用GPG，即没有GUI界面时 | Rainbow">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在TTY或SSH上使用GPG，即没有GUI界面时<a href="https://github.com/nwater23/nwater23.github.io/tree/main/source/_posts/GPG-on-TTY.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-14 11:56:13" itemprop="dateCreated datePublished" datetime="2023-07-14T11:56:13+08:00">2023-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">教程 - Linux - 实用工具</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>222</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>当通过ssh远程连接到服务器，或者在纯字符界面的tty上操作时，总之就是在无GUI情况下操作时。<br />
+使用gpg签名（或者通过<code>git commit -S</code>等调用gpg），会报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gpg: signing failed: Inappropriate ioctl for device</span><br><span class="line">gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</span><br></pre></td></tr></table></figure>
+<p>原因是无法调用默认的<code>/usr/bin/pinentry-gtk-2</code>，如果你没安装GTK的话也会出现这个报错。</p>
+<p>根据Arch Wiki介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，修改<code>.bashrc</code>即可（zsh同理）：</p>
+<figure class="highlight bash"><figcaption><span>.bashrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GPG_TTY=$(<span class="built_in">tty</span>)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>(2023) <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/GnuPG#Invalid_IPC_response_and_Inappropriate_ioctl_for_device">ArchWiki: GnuPG§9.12 Invalid IPC response and Inappropriate ioctl for device</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">=== Invalid IPC response and Inappropriate ioctl for device ===</span><br><span class="line"></span><br><span class="line">The default pinentry program is &#123;&#123;ic|/usr/bin/pinentry-gtk-2&#125;&#125;. If &#123;&#123;Pkg|gtk2&#125;&#125; is unavailable, pinentry falls back to &#123;&#123;ic|/usr/bin/pinentry-curses&#125;&#125; and causes signing to fail:</span><br><span class="line"></span><br><span class="line">    gpg: signing failed: Inappropriate ioctl for device</span><br><span class="line">    gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</span><br><span class="line"></span><br><span class="line">You need to set the &#123;&#123;ic|GPG_TTY&#125;&#125; environment variable for the pinentry programs &#123;&#123;ic|/usr/bin/pinentry-tty&#125;&#125; and &#123;&#123;ic|/usr/bin/pinentry-curses&#125;&#125;.</span><br><span class="line"></span><br><span class="line">    $ export GPG_TTY=$(tty)</span><br></pre></td></tr></table></figure> <a href="#fnref1" class="footnote-backref">↩︎</a></li>
+</ol>
+</section>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-07-06T15:08:09+08:00"
-              content="2023-07-06">
-          07-06
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/" itemprop="url">
-            <span itemprop="name">QEMU 命令合集</span>
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Nian Water
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://nwater23.github.io/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/" title="在TTY或SSH上使用GPG，即没有GUI界面时">https://nwater23.github.io/教程-Linux-实用工具/GPG-on-TTY/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
       </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/Linux-%E4%BD%9C%E4%B8%BA%E7%8E%AF%E5%A2%83/" rel="tag"># Linux - 作为环境</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%95%8C%E9%9D%A2-TTY/" rel="tag"># 操作界面 - TTY</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%95%8C%E9%9D%A2-SSH/" rel="tag"># 操作界面 - SSH</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%95%8C%E9%9D%A2-CLI/" rel="tag"># 操作界面 - CLI</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%95%8C%E9%9D%A2-non-GUI/" rel="tag"># 操作界面 - non-GUI</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%95%8C%E9%9D%A2-TUI/" rel="tag"># 操作界面 - TUI</a>
+              <a href="/tags/%E5%BD%92%E6%A1%A3%E5%92%8C%E5%8E%8B%E7%BC%A9-GnuPG/" rel="tag"># 归档和压缩 - GnuPG</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/" rel="prev" title="QEMU 命令合集">
+                  <i class="fa fa-chevron-left"></i> QEMU 命令合集
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 
