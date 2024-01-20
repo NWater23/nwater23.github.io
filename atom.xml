@@ -6,7 +6,7 @@
   <link href="https://nwater23.github.io/atom.xml" rel="self"/>
   
   <link href="https://nwater23.github.io/"/>
-  <updated>2023-07-14T05:08:46.000Z</updated>
+  <updated>2023-01-19T16:00:00.000Z</updated>
   <id>https://nwater23.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VirtualBox 管理虚拟磁盘 压缩磁盘镜像</title>
+    <link href="https://nwater23.github.io/%E7%AC%94%E8%AE%B0-VirtualBox/VBoxMange/"/>
+    <id>https://nwater23.github.io/%E7%AC%94%E8%AE%B0-VirtualBox/VBoxMange/</id>
+    <published>2024-01-19T16:00:00.000Z</published>
+    <updated>2023-01-19T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载<a href="https://learn.microsoft.com/zh-cn/sysinternals/downloads/sdelete">SDelete</a>。</p><div class="note info"><p>接下来的命令默认你已经位于解压了 SDelete 的目录内，或者将其目录加入了环境变量，并且使用 cmd。<br />如果你使用 Powershell 或者其它终端，请自行加上绝对路径/相对路径。</p></div><p>在虚拟机内打开 cmd，执行命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdelete -c -z C:</span><br></pre></td></tr></table></figure><p>若你需要压缩其它盘符，更改 <code>C:</code> 即可。详细的操作说明请使用 <code>sdelete -?</code> 查看。</p><p>等待程序正常运行完成后，关闭虚拟机。</p><p>在宿主机上，使用 <code>VBoxManage</code> 工具<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，压缩已被全部设为<code>0x00</code>的空白空间：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VBoxManage modifymedium disk windows_11.vdi --compact</span><br></pre></td></tr></table></figure><div class="note warning"><p>对于 Linux 用户，<code>vboxmanage</code> 与 <code>VBoxManage</code> 是两个不同的命令，请注意大小写。<br />若要处理旧的兼容格式，请考虑 <code>vboxmanage</code>。</p></div><span id="more"></span><p>另请参阅：</p><ul><li><a href="https://forums.virtualbox.org/viewtopic.php?t=75308">VirtualBox Forum - Could not get the storage format of the medium</a></li><li><a href="https://superuser.com/questions/388733/virtualbox-how-to-free-up-unused-vdi-disk-place">StackExchange - VirtualBox - how to free up unused VDI disk place?</a></li><li><a href="https://superuser.com/questions/529149/how-to-compact-virtualboxs-vdi-file-size">StackExchange - How to compact VirtualBox’s VDI file size?</a></li><li><a href="https://wiki.archlinux.org/title/VirtualBox">VirtualBox - ArchWiki</a></li><li><a href="https://learn.microsoft.com/zh-cn/sysinternals/downloads/sdelete">Microsoft Learn / Sysinternals / SDelete</a></li></ul><hr class="footnotes-sep" /><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p><a href="https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifymedium">VirtualBox Mannual - Chapter 8. VBoxManage Section 8.31. VBoxManage modifymedium</a><br /><strong>（更新）</strong> 链接的锚点地址有变动(<code>#vboxmanage-modifyvdi</code> -&gt; <code>#vboxmanage-modifymedium</code>) <a href="#fnref1" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;下载&lt;a href=&quot;https://learn.microsoft.com/zh-cn/sysinternals/downloads/sdelete&quot;&gt;SDelete&lt;/a&gt;。&lt;/p&gt;
+&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;接下来的命令默认你已经位于解压了 SDelete 的目录内，或者将其目录加入了环境变量，并且使用 cmd。&lt;br /&gt;
+如果你使用 Powershell 或者其它终端，请自行加上绝对路径/相对路径。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;在虚拟机内打开 cmd，执行命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sdelete -c -z C:&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;若你需要压缩其它盘符，更改 &lt;code&gt;C:&lt;/code&gt; 即可。详细的操作说明请使用 &lt;code&gt;sdelete -?&lt;/code&gt; 查看。&lt;/p&gt;
+&lt;p&gt;等待程序正常运行完成后，关闭虚拟机。&lt;/p&gt;
+&lt;p&gt;在宿主机上，使用 &lt;code&gt;VBoxManage&lt;/code&gt; 工具&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;，压缩已被全部设为&lt;code&gt;0x00&lt;/code&gt;的空白空间：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;VBoxManage modifymedium disk windows_11.vdi --compact&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;对于 Linux 用户，&lt;code&gt;vboxmanage&lt;/code&gt; 与 &lt;code&gt;VBoxManage&lt;/code&gt; 是两个不同的命令，请注意大小写。&lt;br /&gt;
+若要处理旧的兼容格式，请考虑 &lt;code&gt;vboxmanage&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="笔记 - VirtualBox" scheme="https://nwater23.github.io/categories/%E7%AC%94%E8%AE%B0-VirtualBox/"/>
+    
+    
+    <category term="虚拟化 - 软件 - VirtualBox" scheme="https://nwater23.github.io/tags/%E8%99%9A%E6%8B%9F%E5%8C%96-%E8%BD%AF%E4%BB%B6-VirtualBox/"/>
+    
+  </entry>
   
   <entry>
     <title>VSCode Keychain Issues</title>
