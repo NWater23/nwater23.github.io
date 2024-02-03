@@ -4,16 +4,11 @@ date: 2023-07-14 13:08:46
 updated: 2023-07-14 13:08:46
 tags:
 - Linux
-  - 作为环境
-- 开发环境
-  - IDE
-    - VS Code
+- IDE
+- VS Code
 categories:
 - 教程
-  - Linux
-    - 实用工具
-- 笔记
-  - VS Code
+- VS Code
 ---
 
 ## 发现问题

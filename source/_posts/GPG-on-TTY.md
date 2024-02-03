@@ -4,23 +4,13 @@ date: 2023-07-14 11:56:13
 updated: 2023-07-14 11:56:13
 tags:
 - Linux
-  - 作为环境
-- 操作界面
-  - TTY
-- 操作界面
-  - SSH
-- 操作界面
-  - CLI
-- 操作界面
-  - non-GUI
-- 操作界面
-  - TUI
+- TTY
+- SSH
 - 归档和压缩
-  - GnuPG
+- GnuPG
 categories:
 - 教程
-  - Linux
-    - 实用工具
+- Linux
 ---
 
 当通过ssh远程连接到服务器，或者在纯字符界面的tty上操作时，总之就是在无GUI情况下操作时。  

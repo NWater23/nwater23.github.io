@@ -3,35 +3,17 @@ title: zip 解压乱码：代码页 cp936
 date: 2023-06-09 18:45:20
 updated: 2023-06-09 18:45:20
 tags:
-- 归档和压缩
-  - zip
-    - unzip 解压
+- zip
 - Linux
-  - 作为环境
 - Windows
-  - 作为来源
-- 编码字符集
-  - 东亚
-    - 中文
-        - cp936
-- 编码字符集
-  - 东亚
-    - 中文
-        - GB2312
-- 编码字符集
-  - 东亚
-    - 中文
-        - GBK
-- 编码字符集
-  - 东亚
-    - 中文
-        - GB18030
-- 问题与修复
-  - 乱码
+- cp936
+- GB2312
+- GBK
+- GB18030
+- 乱码
 categories:
 - 教程
-  - Linux
-    - 实用工具
+- Linux
 ---
 
 Windows 使用的简体中文编码与 UTF-8 不兼容会导致乱码。[^debian-bug-report]

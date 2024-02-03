@@ -4,11 +4,10 @@ date: 2024-01-20
 updated: 2023-01-20
 tags:
 - 虚拟化
-  - 软件
-    - VirtualBox
+- VirtualBox
 categories:
-- 笔记
-  - VirtualBox
+- 教程
+- VirtualBox
 ---
 
 下载[SDelete](https://learn.microsoft.com/zh-cn/sysinternals/downloads/sdelete)。
