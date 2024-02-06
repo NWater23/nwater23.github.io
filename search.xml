@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>在TTY或SSH上使用GPG，即没有GUI界面时</title>
-    <url>/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/GPG-on-TTY/</url>
+    <url>/%E6%95%99%E7%A8%8B/Linux/GPG-on-TTY/</url>
     <content><![CDATA[<p>当通过ssh远程连接到服务器，或者在纯字符界面的tty上操作时，总之就是在无GUI情况下操作时。<br />
 使用gpg签名（或者通过<code>git commit -S</code>等调用gpg），会报错：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gpg: signing failed: Inappropriate ioctl for device</span><br><span class="line">gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</span><br></pre></td></tr></table></figure>
@@ -19,21 +19,20 @@
 </section>
 ]]></content>
       <categories>
-        <category>教程 - Linux - 实用工具</category>
+        <category>教程</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux - 作为环境</tag>
-        <tag>操作界面 - TTY</tag>
-        <tag>操作界面 - SSH</tag>
-        <tag>操作界面 - CLI</tag>
-        <tag>操作界面 - non-GUI</tag>
-        <tag>操作界面 - TUI</tag>
-        <tag>归档和压缩 - GnuPG</tag>
+        <tag>Linux</tag>
+        <tag>TTY</tag>
+        <tag>SSH</tag>
+        <tag>归档和压缩</tag>
+        <tag>GnuPG</tag>
       </tags>
   </entry>
   <entry>
     <title>QEMU 命令合集</title>
-    <url>/%E7%AC%94%E8%AE%B0-QEMU/QEMU-Command-Collection/</url>
+    <url>/%E7%AC%94%E8%AE%B0/QEMU/QEMU-Command-Collection/</url>
     <content><![CDATA[<p>俗话说，前人栽树，后人乘凉。希望能解决你的问题。</p>
 <script src="https://gist.github.com/NWater23/e86dc92c4cd206f57bc754572e3f8adf.js"></script>
 <span id="more"></span>
@@ -45,16 +44,35 @@
 </ul>
 ]]></content>
       <categories>
-        <category>笔记 - QEMU</category>
+        <category>笔记</category>
+        <category>QEMU</category>
       </categories>
       <tags>
-        <tag>Linux - 作为环境</tag>
-        <tag>虚拟化 - 软件 - QEMU</tag>
+        <tag>Linux</tag>
+        <tag>虚拟化</tag>
+        <tag>QEMU</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器扩展 TextareaCache</title>
+    <url>/%E7%AC%94%E8%AE%B0/Firefox/TextareaCache/</url>
+    <content><![CDATA[<p>无意中在这篇文章里发现的：<a href="https://blog.lilydjwg.me/2011/12/24/microsoft-word-is-dangerous.31442.html">危险的 Microsoft Word - 依云’s Blog</a></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>Firefox</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安全</tag>
+        <tag>浏览器扩展</tag>
+        <tag>Firefox</tag>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
     <title>VirtualBox 管理虚拟磁盘 压缩磁盘镜像</title>
-    <url>/%E7%AC%94%E8%AE%B0-VirtualBox/VBoxMange/</url>
+    <url>/%E6%95%99%E7%A8%8B/VirtualBox/VBoxMange/</url>
     <content><![CDATA[<p>下载<a href="https://learn.microsoft.com/zh-cn/sysinternals/downloads/sdelete">SDelete</a>。</p>
 <div class="note info"><p>接下来的命令默认你已经位于解压了 SDelete 的目录内，或者将其目录加入了环境变量，并且使用 cmd。<br />
 如果你使用 Powershell 或者其它终端，请自行加上绝对路径/相对路径。</p>
@@ -87,15 +105,17 @@
 </section>
 ]]></content>
       <categories>
-        <category>笔记 - VirtualBox</category>
+        <category>教程</category>
+        <category>VirtualBox</category>
       </categories>
       <tags>
-        <tag>虚拟化 - 软件 - VirtualBox</tag>
+        <tag>虚拟化</tag>
+        <tag>VirtualBox</tag>
       </tags>
   </entry>
   <entry>
     <title>VSCode Keychain Issues</title>
-    <url>/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0-VS-Code/VSCode-Keychain-Issues/</url>
+    <url>/%E6%95%99%E7%A8%8B/VS-Code/VSCode-Keychain-Issues/</url>
     <content><![CDATA[<h2 id="发现问题"><a class="markdownIt-Anchor" href="#发现问题"></a> 发现问题</h2>
 <p>更新完VSCode，突然提示出错。询问<code>请打开疑难解答指南以解决此问题，也可以使用不用 OS keyring 的较弱加密。</code></p>
 <details>
@@ -155,12 +175,68 @@
 </section>
 ]]></content>
       <categories>
-        <category>教程 - Linux - 实用工具</category>
-        <category>笔记 - VS Code</category>
+        <category>教程</category>
+        <category>VS Code</category>
       </categories>
       <tags>
-        <tag>Linux - 作为环境</tag>
-        <tag>开发环境 - IDE - VS Code</tag>
+        <tag>Linux</tag>
+        <tag>IDE</tag>
+        <tag>VS Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>fix Powerpill with Pacman re-download cached packages</title>
+    <url>/%E6%95%99%E7%A8%8B/Linux/fix-Powerpill-with-Pacman-redl-cached-pkgs/</url>
+    <content><![CDATA[<p>There for me, a strange thing happened:</p>
+<ol>
+<li>Powerpill download package files(<code>*.pkg.tar.zst</code>) into CacheDir<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li>Pacman download package files again</li>
+</ol>
+<p>How it happen?</p>
+<span id="more"></span>
+<h2 id="possible-1-signature-check-failed"><a class="markdownIt-Anchor" href="#possible-1-signature-check-failed"></a> Possible 1: Signature check failed</h2>
+<p>Pacman does check every pkg file according to default <code>pacman.conf</code>. For safety reason you should not change this options.</p>
+<h2 id="possible-2-aira2c-does-downloading-to-part-file"><a class="markdownIt-Anchor" href="#possible-2-aira2c-does-downloading-to-part-file"></a> Possible 2: Aira2c does downloading to <code>.part</code> file</h2>
+<p>Check the <code>/etc/pacman.conf</code>:</p>
+<figure class="highlight plaintext"><figcaption><span>/etc/pacman.conf</span></figcaption><table><tr><td class="code"><pre><span class="line">[options]</span><br><span class="line">#XferCommand = /usr/bin/curl -L -C - -f -o %o %u</span><br><span class="line">#XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u</span><br><span class="line">XferCommand = /usr/local/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=5 --max-connection-per-server=5 -s 1024 --lowest-speed-limit=200k --max-file-not-found=5 --min-split-size=4M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u</span><br></pre></td></tr></table></figure>
+<p>Look at the <code>XferCommand</code>’s value, when pacman downloading pkg file e.g. <code>http://mirrors.tuna.tsinghua.edu.cn/archlinux/core/os/x86_64/pacman-6.0.2-8-x86_64.pkg.tar.zst</code>, the command executed is:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/local/bin/aria2c \</span><br><span class="line">  --allow-overwrite=<span class="literal">true</span> --<span class="built_in">continue</span>=<span class="literal">true</span> --file-allocation=none \</span><br><span class="line">  --log-level=error --max-tries=5 --max-connection-per-server=5 \</span><br><span class="line">  -s 1024 --lowest-speed-limit=200k --max-file-not-found=5 --min-split-size=4M \</span><br><span class="line">  --no-conf --remote-time=<span class="literal">true</span> --summary-interval=60 --<span class="built_in">timeout</span>=5 \</span><br><span class="line">  --<span class="built_in">dir</span>=/ \</span><br><span class="line">  --out /var/cache/pacman/pkg/pacman-6.0.2-8-x86_64.pkg.tar.zst \</span><br><span class="line">  http://mirrors.tuna.tsinghua.edu.cn/archlinux/core/os/x86_64/pacman-6.0.2-8-x86_64.pkg.tar.zst</span><br></pre></td></tr></table></figure>
+<p>You’ll see it writes to file <code>//var/cache/pacman/pkg/pacman-6.0.2-8-x86_64.pkg.tar.zst.part</code>, the prefix <code>//</code> and suffix <code>.part</code> it not we expected.</p>
+<p>This configure file will statisfiy we requirements:<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<figure class="highlight plaintext"><figcaption><span>/etc/pacman.conf</span></figcaption><table><tr><td class="code"><pre><span class="line">[options]</span><br><span class="line">XferCommand = echo Downloading %u ... &amp;&amp; /usr/bin/aria2c --conf-path=/root/.aria2/pacman-aria2.conf %u</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><figcaption><span>/root/.aria2/pacman-aria2.conf</span></figcaption><table><tr><td class="code"><pre><span class="line"># error handling</span><br><span class="line">timeout=60</span><br><span class="line">connect-timeout=30</span><br><span class="line">max-tries=5</span><br><span class="line">retry-wait=10</span><br><span class="line">max-file-not-found=1</span><br><span class="line"></span><br><span class="line"># downloading</span><br><span class="line">split=3</span><br><span class="line">max-connection-per-server=3</span><br><span class="line">min-split-size=1M</span><br><span class="line">max-concurrent-downloads=1</span><br><span class="line">file-allocation=none</span><br><span class="line">remote-time=true</span><br><span class="line">conditional-get=true</span><br><span class="line">no-netrc=true</span><br><span class="line"></span><br><span class="line"># resuming</span><br><span class="line">continue=true</span><br><span class="line">allow-overwrite=true</span><br><span class="line">always-resume=false</span><br><span class="line"></span><br><span class="line"># proxy</span><br><span class="line">#http-proxy=127.0.0.1:8080</span><br><span class="line">#https-proxy=127.0.0.1:8080</span><br><span class="line">#ftp-proxy=127.0.0.1:8080</span><br><span class="line"></span><br><span class="line"># console</span><br><span class="line">#quiet=true</span><br><span class="line">console-log-level=warn</span><br><span class="line">summary-interval=0</span><br><span class="line">#enable-color=false</span><br><span class="line">#human-readable=false</span><br><span class="line">#show-console-readout=false</span><br><span class="line">#truncate-console-readout=false</span><br><span class="line"></span><br><span class="line"># logging</span><br><span class="line">log-level=warn</span><br><span class="line">log=/var/log/pacman-aria2.log</span><br></pre></td></tr></table></figure>
+<h2 id="possible-3-miss-time-stamp-local-file-is-older-than-server"><a class="markdownIt-Anchor" href="#possible-3-miss-time-stamp-local-file-is-older-than-server"></a> Possible 3: miss time stamp / local file is older than server</h2>
+<p>If server(Mirror server) did not pass the file update time to aria2c/wget/curl, then your client will download again. It behave as if as the local file is older than server.</p>
+<p>If no time stamp provides, it will be default to <code>1 January 1970 00:00:00 UTC</code> (Unix Timestamp <code>0</code>).</p>
+<p>To check if a mirror site provides file update time or not yet at all, run follow command:<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl --silent --<span class="built_in">head</span> <span class="string">&quot;<span class="subst">$(pacman -Sp pacman --cachedir /dev/null)</span>&quot;</span> | grep Last-Modified</span><br></pre></td></tr></table></figure>
+<p>Command result should be like <code>Last-Modified: Wed, 20 Sep 2023 23:37:12 GMT</code>.</p>
+<ul>
+<li>If <code>grep</code> exited with return value <code>1</code>, it means no match line found, this only happens when server response does not contain a time stamp.</li>
+</ul>
+<h2 id="end"><a class="markdownIt-Anchor" href="#end"></a> End</h2>
+<p>This is the first time I write blog in English.</p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Defined in <code>/etc/pacman.conf</code> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://bbs.archlinux.org/post.php?tid=192072&amp;qid=1491879">pacman and aria2 - better configuration?</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://bbs.archlinux.org/post.php?tid=269644&amp;qid=1992948">https://bbs.archlinux.org/post.php?tid=269644&amp;qid=1992948</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch Linux</tag>
+        <tag>Pacman</tag>
+        <tag>Powerpill</tag>
       </tags>
   </entry>
   <entry>
@@ -184,7 +260,7 @@
   </entry>
   <entry>
     <title>zip 解压乱码：代码页 cp936</title>
-    <url>/%E6%95%99%E7%A8%8B-Linux-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/zip-cp936/</url>
+    <url>/%E6%95%99%E7%A8%8B/Linux/zip-cp936/</url>
     <content><![CDATA[<p>Windows 使用的简体中文编码与 UTF-8 不兼容会导致乱码。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>使用 <code>-O cp936</code> 选项<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ unzip -O cp936 &lt;zip file&gt;</span><br></pre></td></tr></table></figure>
@@ -218,17 +294,18 @@
 </section>
 ]]></content>
       <categories>
-        <category>教程 - Linux - 实用工具</category>
+        <category>教程</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux - 作为环境</tag>
-        <tag>归档和压缩 - zip - unzip 解压</tag>
-        <tag>Windows - 作为来源</tag>
-        <tag>编码字符集 - 东亚 - 中文 - cp936</tag>
-        <tag>编码字符集 - 东亚 - 中文 - GB2312</tag>
-        <tag>编码字符集 - 东亚 - 中文 - GBK</tag>
-        <tag>编码字符集 - 东亚 - 中文 - GB18030</tag>
-        <tag>问题与修复 - 乱码</tag>
+        <tag>Linux</tag>
+        <tag>zip</tag>
+        <tag>Windows</tag>
+        <tag>cp936</tag>
+        <tag>GB2312</tag>
+        <tag>GBK</tag>
+        <tag>GB18030</tag>
+        <tag>乱码</tag>
       </tags>
   </entry>
 </search>
