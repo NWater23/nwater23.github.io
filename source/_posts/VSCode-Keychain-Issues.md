@@ -1,7 +1,7 @@
 ---
 title: VSCode Keychain Issues
 date: 2023-07-14 13:08:46
-updated: 2023-07-14 13:08:46
+updated: 2024-02-07 17:27:00
 tags:
 - Linux
 - IDE
@@ -47,9 +47,13 @@ code --verbose --vmodule="*/components/os_crypt/*=1" | less
 那问题很好解决了，直接照着官方文档改一下`argv.json`就行了。
 ```json ~/.vscode/argv.json
 {
-	"password-store": "gnome",
+	"password-store": "gnome-libsecret",
 }
 ```
+
+{% note info %}
+更新（2024-02-07）：对于我而言，此前设置 `--password-store=gnome` 是有效的，但是 VSCode 更新后，我修改了新设置 `--password-store=gnome-libsecret` 才修复重新出现的问题。
+{% endnote %}
 
 <!-- more -->
 
