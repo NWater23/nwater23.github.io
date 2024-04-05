@@ -187,6 +187,40 @@
       </tags>
   </entry>
   <entry>
+    <title>ffmpeg usage</title>
+    <url>/%E7%AC%94%E8%AE%B0/ffmpeg-usage/</url>
+    <content><![CDATA[<p>今天又是被ffmpeg折腾得死去活来的一天，为了避免以后浪费时间，有必要记录一下。</p>
+<h3 id="硬件加速"><a class="markdownIt-Anchor" href="#硬件加速"></a> 硬件加速</h3>
+<p><code>-hwaccel &lt;method&gt;</code> 可以用 <code>-hwaccels</code> 查看可用 method</p>
+<p><code>-c:v &lt;encoder&gt;</code> encoder 必须为硬件支持的编解码器：<code>h264_qsv</code>, <code>hevc_qsv</code></p>
+<h3 id="质量控制"><a class="markdownIt-Anchor" href="#质量控制"></a> 质量控制</h3>
+<h3 id="视频剪辑"><a class="markdownIt-Anchor" href="#视频剪辑"></a> 视频剪辑</h3>
+<p><code>-ss &lt;hh:mm:ss&gt;</code> <code>-to &lt;hh:mm:ss&gt;</code> 两个开关控制起始时间和结束时间。</p>
+<p><code>-f concat -i &lt;concat_list_file&gt;</code> 拼接视频，concat_list_file 中需要预先定义好需要的视频文件，可以这样生成：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> *.mp4; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">&quot;file &#x27;<span class="variable">$f</span>&#x27;&quot;</span> &gt;&gt; mylist.txt; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h3 id="画面编辑"><a class="markdownIt-Anchor" href="#画面编辑"></a> 画面编辑</h3>
+<h4 id="压制硬字幕嵌入画面中"><a class="markdownIt-Anchor" href="#压制硬字幕嵌入画面中"></a> 压制硬字幕（嵌入画面中）</h4>
+<p><code>-vf &quot;subtitles=example_subtitle.vtt&quot;</code></p>
+<h4 id="马赛克"><a class="markdownIt-Anchor" href="#马赛克"></a> 马赛克</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i mask.png -filter_complex <span class="string">&quot;[0:v][1:v]alphamerge,avgblur=128[alf];[0:v][alf]overlay[v]&quot;</span> -map <span class="string">&quot;[v]&quot;</span> -map 0:a -c:v h264_qsv -c:a copy -movflags +faststart output.mp4</span><br></pre></td></tr></table></figure>
+<p><code>avgblur=&lt;number&gt;</code> 数字越大越模糊。</p>
+<p><code>-i mask.png</code> 使用 <code>mask.png</code> 作为遮罩，这张图片需要与视频画面大小一致，白色像素对应打码区域，黑色像素对应保持原样。 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://superuser.com/a/901705">https://superuser.com/a/901705</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>ffmpeg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>fix Powerpill with Pacman re-download cached packages</title>
     <url>/%E6%95%99%E7%A8%8B/Linux/fix-Powerpill-with-Pacman-redl-cached-pkgs/</url>
     <content><![CDATA[<p>There for me, a strange thing happened:</p>
